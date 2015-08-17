@@ -49,6 +49,7 @@ class Application(tornado.web.Application):
             (r"/", HomeHandler),
             (r"/archive", ArchiveHandler),
             (r"/feed", FeedHandler),
+            ###是非/的意思吗
             (r"/entry/([^/]+)", EntryHandler),
             (r"/compose", ComposeHandler),
             (r"/auth/create", AuthCreateHandler),
@@ -65,6 +66,7 @@ class Application(tornado.web.Application):
             login_url="/auth/login",
             debug=True,
         )
+        ###构造  然后初始化
         super(Application, self).__init__(handlers, **settings)
         # Have one global connection to the blog DB across all handlers
         self.db = torndb.Connection(
