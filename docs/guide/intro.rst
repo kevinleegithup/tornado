@@ -30,8 +30,9 @@ container for other WSGI frameworks (`.WSGIContainer`), each of these
 combinations has limitations and to take full advantage of Tornado you
 will need to use the Tornado's web framework and HTTP server together.
 
-``昨天查了下 了解到wsgi是专门python的一套协议，是学习cgi的基本逻辑应该；
-  php-fpm是php的cgi套件；
-  uwsgi是uwsgi比较易用的实现；
-  本质上我自己理解wsgi只是协议规范，并不限制同步还是异步的；只是目前为止
-  的实现都是同步的；这也导致tornado并不能完全兼容wsgi的一套。``
+``昨天查了下 了解到``
+
+* wsgi是专门python的一套协议，是学习cgi的基本逻辑应该;wsgi是uwsgi比较易用的实现；
+* php-fpm是php的cgi套件；
+* 本质上我自己理解wsgi只是协议规范，并不限制同步还是异步的；只是目前为止的实现都是同步的；这也导致tornado并不能完全兼容wsgi的一套。
+
