@@ -3,7 +3,7 @@ Asynchronous and non-Blocking I/O
 
 Real-time web features require a long-lived mostly-idle connection per
 user.  In a traditional synchronous web server, this implies devoting
-one thread to each user, which can be very expensive.
+one thread to each user, which can be very expensive.``目前看golang用的go协程这么做的，刚刚看到说gevent和golang很像``
 
 To minimize the cost of concurrent connections, Tornado uses a
 single-threaded event loop.  This means that all application code
@@ -33,7 +33,7 @@ configuration blocks on DNS resolution but not on other network access
 ``tornado.curl_httpclient`` with a properly-configured build of
 ``libcurl``).  In the context of Tornado we generally talk about
 blocking in the context of network I/O, although all kinds of blocking
-are to be minimized.
+are to be minimized.``主要说网络阻塞``
 
 Asynchronous
 ~~~~~~~~~~~~
@@ -55,7 +55,9 @@ free way to make a synchronous function asynchronous in a way that is
 transparent to its callers (systems like `gevent
 <http://www.gevent.org>`_ use lightweight threads to offer performance
 comparable to asynchronous systems, but they do not actually make
-things asynchronous).
+things asynchronous).``不管使用那种异步方法，走不能和同步的一样一样的，必然多少不同表现``
+
+``限于硬件资源：阻塞是绝对的，不阻塞是相对的；从响应时间上看：同步是绝对的，异步是相对的(部分的方面，部分的逻辑)``
 
 Examples
 ~~~~~~~~
@@ -116,7 +118,7 @@ the ad-hoc error handling common in callback-oriented interfaces), and
 will be discussed in depth in the next section of this guide.  Here is
 the coroutine version of our sample function, which is very similar to
 the original synchronous version:
-
+``意思是“for this”引申为“for this purpose only”``
 .. testcode::
 
     from tornado import gen
@@ -135,4 +137,4 @@ Python 2 (and 3.2), in which generators aren't allowed to return
 values. To overcome this, Tornado coroutines raise a special kind of
 exception called a `.Return`. The coroutine catches this exception and
 treats it like a returned value. In Python 3.3 and later, a ``return
-response.body`` achieves the same result.
+response.body`` achieves the same result.``人工制品，手工艺品，加工品; 石器; ``
