@@ -94,6 +94,7 @@ require one of the following optional libraries:
   recommended thread pool for use with Tornado and enables the use of
   `~tornado.netutil.ThreadedResolver`.  It is needed only on Python 2;
   Python 3 includes this package in the standard library.
+  ``他是python3的包，但可以引入使用``
 * `pycurl <http://pycurl.sourceforge.net>`_ is used by the optional
   ``tornado.curl_httpclient``.  Libcurl version 7.18.2 or higher is required;
   version 7.21.1 or higher is recommended.
@@ -114,12 +115,14 @@ networking performance is generally poor so it is recommended only for
 development use).  Tornado will also run on Windows, although this
 configuration is not officially supported and is recommended only for
 development use.
+``macos的网络性能差?``
 
 Documentation
 -------------
 
 This documentation is also available in `PDF and Epub formats
 <https://readthedocs.org/projects/tornado/downloads/>`_.
+``epub在mac上可以打开的偶 ibooks效果一贯苹果风格不错``
 
 .. toctree::
    :titlesonly:
