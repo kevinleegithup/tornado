@@ -76,6 +76,7 @@ and sends the result back into the generator as the result of the
 ``yield`` expression.  Most asynchronous code never touches the `.Future`
 class directly except to immediately pass the `.Future` returned by
 an asynchronous function to a ``yield`` expression.
+``对生成器还不太懂，还是用到了future``
 
 How to call a coroutine
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,3 +256,5 @@ interleaving pattern from above::
             nxt = gen.sleep(60)   # Start the clock.
             yield do_something()  # Run while the clock is ticking.
             yield nxt             # Wait for the timer to run out.
+            
+``callback interleaving backgroud``
