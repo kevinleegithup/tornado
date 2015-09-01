@@ -22,4 +22,6 @@ no work left in the queue. Thus that worker's call to `~Queue.task_done`
 decrements the counter to zero. The main coroutine, which is waiting for
 `~Queue.join`, is unpaused and finishes.
 
+``是不是所有的多线程的范式都可以转换为异步呢``
+
 .. literalinclude:: ../../demos/webspider/webspider.py
