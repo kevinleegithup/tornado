@@ -86,6 +86,7 @@ def main():
     # Start workers, then wait for the work queue to be empty.
     for _ in range(concurrency):
         worker()
+    ##等待队列结束
     yield q.join(timeout=timedelta(seconds=300))
     assert fetching == fetched
     print('Done in %d seconds, fetched %s URLs.' % (
@@ -96,4 +97,7 @@ if __name__ == '__main__':
     import logging
     logging.basicConfig()
     io_loop = ioloop.IOLoop.current()
+    ##启动一个异步的函数
     io_loop.run_sync(main)
+    
+    ##其实那些worker还在 但是main退出了 over
