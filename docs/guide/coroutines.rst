@@ -11,7 +11,7 @@ resume execution instead of a chain of callbacks (cooperative
 lightweight threads as seen in frameworks like `gevent
 <http://www.gevent.org>`_ are sometimes called coroutines as well, but
 in Tornado all coroutines use explicit context switches and are called
-as asynchronous functions).
+as asynchronous functions).``协程是tornado自己的，并非通常编程语音里面的协程``
 
 Coroutines are almost as simple as synchronous code, but without the
 expense of a thread.  They also `make concurrency easier
@@ -42,7 +42,7 @@ Simply use ``async def foo()`` in place of a function definition with the
 ``@gen.coroutine`` decorator, and ``await`` in place of yield. The rest of
 this document still uses the ``yield`` style for compatibility with older
 versions of Python, but ``async`` and ``await`` will run faster when they
-are available::
+are available::``原语会更快``
 
     async def fetch_coroutine(url):
         http_client = AsyncHTTPClient()
