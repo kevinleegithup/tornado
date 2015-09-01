@@ -5,6 +5,7 @@ from datetime import timedelta
 
 from tornado import httpclient, gen, ioloop, queues
 
+##全局变量
 base_url = 'http://www.tornadoweb.org/en/stable/'
 concurrency = 10
 
@@ -34,6 +35,7 @@ def remove_fragment(url):
     return urlparse.urlunparse((scheme, netloc, url, params, query, ''))
 
 
+###内部类
 def get_links(html):
     class URLSeeker(HTMLParser.HTMLParser):
         def __init__(self):
@@ -56,6 +58,7 @@ def main():
     start = time.time()
     fetching, fetched = set(), set()
 
+    ###线程执行函数
     @gen.coroutine
     def fetch_url():
         current_url = yield q.get()
@@ -73,6 +76,7 @@ def main():
                 if new_url.startswith(base_url):
                     yield q.put(new_url)
 
+        ###
         finally:
             q.task_done()
 
