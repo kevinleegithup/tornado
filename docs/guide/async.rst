@@ -3,7 +3,8 @@ Asynchronous and non-Blocking I/O
 
 Real-time web features require a long-lived mostly-idle connection per
 user.  In a traditional synchronous web server, this implies devoting
-one thread to each user, which can be very expensive.``目前看golang用的go协程这么做的，刚刚看到说gevent和golang很像``
+one thread to each user, which can be very expensive.
+``目前看golang用的go协程这么做的，刚刚看到说gevent和golang很像``
 
 To minimize the cost of concurrent connections, Tornado uses a
 single-threaded event loop.  This means that all application code
@@ -33,7 +34,8 @@ configuration blocks on DNS resolution but not on other network access
 ``tornado.curl_httpclient`` with a properly-configured build of
 ``libcurl``).  In the context of Tornado we generally talk about
 blocking in the context of network I/O, although all kinds of blocking
-are to be minimized.``主要说网络阻塞``
+are to be minimized.
+``主要从网络阻塞上来隔离 cpu dick阻塞``
 
 Asynchronous
 ~~~~~~~~~~~~
@@ -55,7 +57,8 @@ free way to make a synchronous function asynchronous in a way that is
 transparent to its callers (systems like `gevent
 <http://www.gevent.org>`_ use lightweight threads to offer performance
 comparable to asynchronous systems, but they do not actually make
-things asynchronous).``不管使用那种异步方法，走不能和同步的一样一样的，必然多少不同表现``
+things asynchronous).
+``不管使用那种异步方法，走不能和同步的一样一样的，必然多少不同表现``
 
 ``限于硬件资源：阻塞是绝对的，不阻塞是相对的；从响应时间上看：同步是绝对的，异步是相对的(部分的方面，部分的逻辑)``
 
