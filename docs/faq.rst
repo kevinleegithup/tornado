@@ -76,7 +76,7 @@ code must be replaced with non-blocking equivalents. This means one of three thi
 
 See the :doc:`Asynchronous I/O <guide/async>` chapter of the Tornado
 user's guide for more on blocking and asynchronous functions.
-
+``线程||||callback||||协程``
 
 My code is asynchronous, but it's not running in parallel in two browser tabs.
 ------------------------------------------------------------------------------
@@ -86,6 +86,7 @@ tricky to verify this. Browsers will recognize that you are trying to
 load the same page in two different tabs and delay the second request
 until the first has finished. To work around this and see that the server
 is in fact working in parallel, do one of two things:
+``浏览器行为``
 
 * Add something to your urls to make them unique. Instead of
   ``http://localhost:8888`` in both tabs, load
